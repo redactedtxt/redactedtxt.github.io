@@ -1,0 +1,164 @@
+/* Tejas Soddy — portfolio
+   Palette: paper, ink, one green accent. Nothing else. */
+
+:root {
+  --paper: #f6f3ec;
+  --ink: #1b1b18;
+  --muted: #6f6a5f;
+  --accent: #245642;
+  --rule: #d9d4c7;
+  --card: #fffdf8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 700; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--ink); }
+
+/* --- Masthead --- */
+
+.masthead { padding: 4.5rem 0 2.5rem; border-bottom: 1px solid var(--ink); }
+
+.kicker {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.masthead h1 { font-size: clamp(2.5rem, 7vw, 4rem); line-height: 1.05; }
+
+.lede { max-width: 44rem; margin-top: 1rem; color: var(--muted); }
+
+.links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.75rem; margin-top: 1.5rem; }
+.links a { font-weight: 600; font-size: 0.9375rem; }
+
+/* --- Project index --- */
+
+.toc { padding: 2rem 0 0.5rem; }
+
+.section-label {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.toc ol { list-style: none; counter-reset: proj; margin-top: 0.75rem; }
+
+.toc li { counter-increment: proj; border-bottom: 1px solid var(--rule); }
+
+.toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.7rem 0.25rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+.toc a::before {
+  content: counter(proj, decimal-leading-zero);
+  font-size: 0.8125rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.toc a > span:first-of-type { font-weight: 700; min-width: 7.5rem; }
+.toc-desc { color: var(--muted); font-size: 0.9375rem; }
+.toc a:hover > span:first-of-type { color: var(--accent); }
+
+/* --- Projects --- */
+
+.project { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
+
+.project > header { display: grid; grid-template-columns: auto 1fr; gap: 0 1rem; align-items: baseline; }
+
+.num {
+  font-family: Georgia, serif;
+  font-size: 1.125rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.project h2 { font-size: 2rem; }
+
+.oneliner { grid-column: 2; max-width: 42rem; margin-top: 0.4rem; color: var(--muted); }
+
+.project figure { margin: 1.75rem 0; }
+
+.project img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 34rem;
+  border: 1px solid var(--rule);
+  background: var(--card);
+}
+
+figcaption { font-size: 0.875rem; color: var(--muted); margin-top: 0.5rem; }
+
+.meta { border-top: 1px solid var(--rule); }
+
+.meta-row {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.9688rem;
+}
+.meta-row:last-child { border-bottom: none; }
+
+.meta-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 0.1rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  padding: 0.15rem 0.6rem;
+}
+
+/* --- Footer --- */
+
+footer { padding: 2.5rem 0 4rem; font-size: 0.9375rem; color: var(--muted); }
+
+/* --- Mobile --- */
+
+@media (max-width: 640px) {
+  body { font-size: 1rem; }
+  .masthead { padding-top: 3rem; }
+  .toc a { flex-wrap: wrap; gap: 0.5rem; }
+  .toc a > span:first-of-type { min-width: 0; }
+  .toc-desc { flex-basis: 100%; padding-left: 2.35rem; margin-top: -0.35rem; }
+  .project > header { grid-template-columns: 1fr; }
+  .oneliner { grid-column: 1; }
+  .meta-row { grid-template-columns: 1fr; gap: 0.15rem; }
+}
