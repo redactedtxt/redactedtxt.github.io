@@ -3,186 +3,297 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tejas Soddy · Software Developer</title>
-<meta name="description" content="Tejas Soddy, Computer Science student at Wilfrid Laurier University, looking for software engineering and DevOps internships.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23245642'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='15' fill='%23f6f3ec' text-anchor='middle'%3ETS%3C/text%3E%3C/svg%3E">
+<title>Tejas Soddy · Software Engineer</title>
+<meta name="description" content="Tejas Soddy, Computer Science student at Wilfrid Laurier University. Full-stack and DevOps projects, resume, and contact.">
+<meta property="og:title" content="Tejas Soddy · Software Engineer">
+<meta property="og:description" content="Full-stack and DevOps projects by Tejas Soddy, CS at Wilfrid Laurier University.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://redactedtxt.github.io/">
+<meta name="theme-color" content="#08070b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308070b'/%3E%3Ctext x='16' y='21' font-family='monospace' font-weight='700' font-size='13' fill='%23a78bfa' text-anchor='middle'%3ETS%3C/text%3E%3Crect x='9' y='24' width='14' height='2' fill='%234ade80'/%3E%3C/svg%3E">
+<script>
+  // Mark JS as on and apply the saved theme before first paint so nothing flashes.
+  document.documentElement.classList.add("js");
+  try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header class="masthead">
-  <p class="kicker">Software developer looking for SWE / DevOps internships</p>
-  <h1>Tejas Soddy</h1>
-  <p class="lede">Computer Science student at Wilfrid Laurier University. I build
-  full-stack and applied-AI tools: market simulators, campus navigation,
-  agricultural decision support. I care about the unglamorous parts, clean
-  data in and repeatable results out.</p>
-  <nav class="links" aria-label="Contact links">
-    <a href="assets/Tejas_Soddy_Resume.pdf" download>Resume (PDF)</a>
-    <a href="https://github.com/redactedtxt" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://www.linkedin.com/in/tejas-soddy/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="mailto:soddytejas@gmail.com">soddytejas@gmail.com</a>
-  </nav>
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="wordmark" href="#top" aria-label="Tejas Soddy, back to top">tejas<span>.</span>soddy</a>
+    <nav aria-label="Primary">
+      <a href="assets/Tejas_Soddy_Resume.pdf" target="_blank" rel="noopener">resume</a>
+      <a href="#projects">projects</a>
+      <a href="https://github.com/redactedtxt" target="_blank" rel="noopener">github</a>
+      <a href="https://www.linkedin.com/in/tejas-soddy/" target="_blank" rel="noopener">linkedin</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </nav>
+  </div>
 </header>
 
-<nav class="toc" aria-label="Projects">
-  <h2 class="section-label">Projects</h2>
-  <ol>
-    <li><a href="#stackd"><span>Stackd</span><span class="toc-desc">Paper-trading simulator with a deterministic market engine</span></a></li>
-    <li><a href="#mitra"><span>Mitra</span><span class="toc-desc">Map-based social app for finding nearby students</span></a></li>
-    <li><a href="#omen"><span>OMEN</span><span class="toc-desc">Punjabi → English lyric translation pipeline</span></a></li>
-    <li><a href="#hawkmaps"><span>HawkMaps</span><span class="toc-desc">Laurier campus app with an offline-capable AI assistant</span></a></li>
-    <li><a href="#harvestai"><span>HarvestAI</span><span class="toc-desc">Fertilizer recommendations from soil sensors + government data</span></a></li>
-    <li><a href="#perfect-run"><span>15-0-0</span><span class="toc-desc">Spin-draft fantasy game: build an XI that never loses</span></a></li>
-  </ol>
-</nav>
+<main id="top">
 
-<main>
-
-<article class="project" id="stackd">
-  <header>
-    <span class="num">01</span>
-    <h2>Stackd</h2>
-    <p class="oneliner">A browser-based paper-trading app where students learn to invest
-    with $10,000 of practice money. Real brokerage mechanics, zero real risk.</p>
-  </header>
-  <figure>
-    <img src="assets/stackd.png" alt="Stackd landing screen: dark interface with the Stackd wordmark and feature list" loading="lazy">
-    <figcaption>Stackd running locally: the onboarding screen.</figcaption>
-  </figure>
-  <div class="meta">
-    <div class="meta-row"><span class="meta-label">Stack</span><span>React 18 · TypeScript · Zustand · Tailwind CSS · Vite</span></div>
-    <div class="meta-row"><span class="meta-label">Role</span><span>Solo. Designed and built the whole app</span></div>
-    <div class="meta-row"><span class="meta-label">Scope</span><span>Deterministic GBM market engine that generates five years of price
-      history per asset from a seed, so every chart is identical on every visit; an event-sourced performance chart that
-      reconstructs portfolio value on any past day by replaying the transaction log; limit orders, dividends with DRIP,
-      recurring auto-invest, and a 12-lesson financial-literacy hub.</span></div>
-    <div class="meta-row"><span class="meta-label">Links</span><span><a href="https://github.com/redactedtxt/stackd" target="_blank" rel="noopener">github.com/redactedtxt/stackd</a></span></div>
+<section class="hero wrap">
+  <div class="hero-copy">
+    <p class="eyebrow">software engineer · devops</p>
+    <h1>Tejas Soddy</h1>
+    <p class="hero-sub">CS @ Wilfrid Laurier</p>
+    <p class="hero-bio">I'm a Computer Science student at Laurier in Waterloo. I build full-stack
+    apps and the pipelines that ship them: tested, containerized, and deployed. Lately that means
+    React and TypeScript up front, Node and Postgres behind, and GitHub Actions pushing it all to AWS.
+    Open to SWE and DevOps internships.</p>
+    <div class="hero-actions">
+      <a class="pill pill-solid" href="#projects">View projects</a>
+      <a class="pill" href="mailto:soddytejas@gmail.com">soddytejas@gmail.com</a>
+    </div>
   </div>
-</article>
 
-<article class="project" id="mitra">
-  <header>
-    <span class="num">02</span>
-    <h2>Mitra</h2>
-    <p class="oneliner">A full-stack web app that breaks the ice between university students
-    by showing nearby people with shared interests on a live map.</p>
-  </header>
-  <figure>
-    <img src="assets/mitra.png" alt="Photo of Mitra running in a browser: a Leaflet map of Waterloo with user location markers" loading="lazy">
-    <figcaption>Mitra in use: nearby students plotted from real geolocation data.</figcaption>
+  <!-- A replay of Scense's real CI/CD pipeline -->
+  <figure class="term" aria-label="Scense deploy pipeline: lint, typecheck, 416 tests, three Docker images, deploy to AWS EC2, health check 200">
+    <div class="term-bar">
+      <span class="term-title">scense / .github/workflows/deploy.yml</span>
+      <span class="term-status" data-state="passing">passing</span>
+    </div>
+    <ol class="term-lines" aria-hidden="true">
+      <li><span class="p">$</span> git push origin main</li>
+      <li class="h"><span class="a">→</span> ci</li>
+      <li><span class="ok">✓</span> lint</li>
+      <li><span class="ok">✓</span> typecheck  <span class="dim">api · web</span></li>
+      <li><span class="ok">✓</span> 416 tests passed</li>
+      <li class="sub dim">vitest · supertest · pytest · playwright</li>
+      <li><span class="ok">✓</span> build 3 images <span class="a">→</span> ghcr.io</li>
+      <li class="h"><span class="a">→</span> deploy  <span class="dim">aws ec2 over ssh</span></li>
+      <li><span class="ok">✓</span> migrate before up</li>
+      <li><span class="ok">✓</span> docker compose up -d</li>
+      <li><span class="ok">✓</span> GET /api/health  <span class="ok">200 OK</span></li>
+      <li class="live"><span class="dot"></span> live at <a href="https://scense.name" target="_blank" rel="noopener" tabindex="-1">scense.name</a><span class="cursor"></span></li>
+    </ol>
+    <button class="term-rerun" type="button">↻ re-run</button>
   </figure>
-  <div class="meta">
-    <div class="meta-row"><span class="meta-label">Stack</span><span>React · Leaflet / OpenStreetMap · Node.js / Express · SQL Server (Docker)</span></div>
-    <div class="meta-row"><span class="meta-label">Role</span><span>Group project. Wrote the Express and SQL Server backend that stores
-      user profiles and coordinates, with parameterized queries on every request so the database stays safe from SQL
-      injection</span></div>
-    <div class="meta-row"><span class="meta-label">Scope</span><span>Browser geolocation places each user on the map in the right spot,
-      and nearby students with shared interests show up as markers, whether you're making friends or looking for a
-      project partner.</span></div>
-    <div class="meta-row"><span class="meta-label">Links</span><span><a href="https://github.com/AnimeniacSimey/MitraApp" target="_blank" rel="noopener">github.com/AnimeniacSimey/MitraApp</a></span></div>
-  </div>
-</article>
+</section>
 
-<article class="project" id="omen">
-  <header>
-    <span class="num">03</span>
-    <h2>OMEN</h2>
-    <p class="oneliner">Paste a YouTube link to a Punjabi song and get the lyrics back line
-    by line: Romanized Punjabi over an English translation that keeps the idiom intact.</p>
-  </header>
-  <figure>
-    <img src="assets/omen-ui.png" alt="OMEN desktop app: an off-white window with a YouTube link field and a translation results panel" loading="lazy">
-    <figcaption>OMEN mid-pipeline: track identified and verified, translation running.</figcaption>
-  </figure>
-  <div class="meta">
-    <div class="meta-row"><span class="meta-label">Stack</span><span>Python · Tkinter · OpenAI API · Genius API · yt-dlp · RapidFuzz</span></div>
-    <div class="meta-row"><span class="meta-label">Role</span><span>Solo. Pipeline and interface</span></div>
-    <div class="meta-row"><span class="meta-label">Scope</span><span>Messy, inconsistent YouTube titles are cleaned and normalized into
-      (artist, title) before anything reaches the model; candidates are verified against the Genius API with fuzzy
-      matching; a strict low-temperature prompt is parsed into line pairs so the output structure is identical run to
-      run.</span></div>
-    <div class="meta-row"><span class="meta-label">Links</span><span><a href="https://github.com/redactedtxt/omen" target="_blank" rel="noopener">github.com/redactedtxt/omen</a></span></div>
-  </div>
-</article>
+<div class="wrap"><hr class="rule"></div>
 
-<article class="project" id="hawkmaps">
-  <header>
-    <span class="num">04</span>
-    <h2>HawkMaps</h2>
-    <p class="oneliner">A campus app for Wilfrid Laurier University: interactive map, live
-    study-space availability, club events, and an AI assistant that still works offline.</p>
-  </header>
-  <figure>
-    <img src="assets/hawkmaps.png" alt="Two HawkMaps screens: the welcome screen with the hawk logo, and the Study Spaces tab showing live seat availability across campus buildings" loading="lazy">
-    <figcaption>HawkMaps running in Expo: welcome screen and live study-space availability.</figcaption>
-  </figure>
-  <div class="meta">
-    <div class="meta-row"><span class="meta-label">Stack</span><span>React Native · Expo · TypeScript · Python / FastAPI · SQLite</span></div>
-    <div class="meta-row"><span class="meta-label">Role</span><span>Team project (CP317 Software Engineering). Worked on GoldenHawk,
-      the AI assistant: an LLM backend (Claude or Groq) with an on-device fallback engine that grounds answers in real
-      campus data, resolves rooms to buildings, finds the fastest indoor route with Dijkstra's algorithm, and reports
-      live open/closed status, so the chat keeps working when the backend is down.</span></div>
-    <div class="meta-row"><span class="meta-label">Scope</span><span>Map, events, study-space, and AI-assistant tabs behind a
-      Laurier-email login; shipped as the final group project for CP317.</span></div>
-    <div class="meta-row"><span class="meta-label">Links</span><span><a href="https://github.com/AnimeniacSimey/HawkMaps" target="_blank" rel="noopener">github.com/AnimeniacSimey/HawkMaps</a></span></div>
-  </div>
-</article>
+<section class="projects wrap" id="projects">
+  <p class="eyebrow">selected projects</p>
+  <h2 class="section-title">Things I've built<br>and shipped.</h2>
 
-<article class="project" id="harvestai">
-  <header>
-    <span class="num">05</span>
-    <h2>HarvestAI</h2>
-    <p class="oneliner">Recommends the nitrate fertilizer mix and amount for a specific
-    location by combining soil-sensor readings, government soil data, and regional climate.</p>
-  </header>
-  <figure>
-    <img src="assets/harvestai.png" alt="HarvestAI interface: soil moisture and pH charts over five days with a fertilizer recommendation" loading="lazy">
-    <figcaption>HarvestAI: sensor readings and the resulting recommendation.</figcaption>
-  </figure>
-  <div class="meta">
-    <div class="meta-row"><span class="meta-label">Stack</span><span>Python · GeoPandas · Shapely · DeepSeek LLM (OpenAI-compatible API) · Tkinter · Matplotlib</span></div>
-    <div class="meta-row"><span class="meta-label">Role</span><span>Group project. Wrote the GeoPandas + Shapely geospatial parser that
-      matches a location to its Canada Land Inventory soil polygon, and the DeepSeek integration that turns that soil
-      context into the fertilizer recommendation</span></div>
-    <div class="meta-row"><span class="meta-label">Scope</span><span>Simulated IoT soil-sensor readings, Canada Land Inventory soil
-      capability data, and regional climate information combine into the model's context; the recommendation is shown
-      alongside the raw sensor data in Matplotlib charts.</span></div>
-    <div class="meta-row"><span class="meta-label">Links</span><span><a href="https://github.com/AnimeniacSimey/HarvestAI" target="_blank" rel="noopener">github.com/AnimeniacSimey/HarvestAI</a></span></div>
-  </div>
-</article>
+  <!-- 01 · Scense (featured) -->
+  <article class="card featured reveal" id="scense">
+    <div class="card-body">
+      <div class="card-top">
+        <span class="num">01 <i>/ 07</i></span>
+        <span class="badges"><span class="badge badge-live"><span class="dot"></span>live</span><span class="badge badge-accent">featured</span></span>
+      </div>
+      <h3>Scense</h3>
+      <p class="desc">Ranks which fragrances to layer with one you already own, either to amplify
+      it or to soften its edge. A math-based pairing engine scores every pair ahead of time, and a
+      Claude-powered chat turns "I like warm, spicy things" into a taste profile.</p>
+      <ul class="tags">
+        <li>React 19</li><li>TypeScript</li><li>Node</li><li>Express</li><li>PostgreSQL</li>
+        <li>Python</li><li>Claude API</li><li>Docker</li><li>AWS</li><li>GitHub Actions</li>
+      </ul>
+      <p class="links">
+        <a href="https://scense.name" target="_blank" rel="noopener">Live site</a>
+        <a href="https://github.com/redactedtxt/Scense" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </div>
+    <a class="shot" href="https://scense.name" target="_blank" rel="noopener" tabindex="-1">
+      <img src="assets/scense.jpg" width="1280" height="1000" alt="Scense pairing page: Club de Nuit Intense Man set to Soften, with its top three layering partners ranked by score">
+    </a>
+    <ul class="points">
+      <li><strong>Pairing engine.</strong> 1,000 fragrances mapped onto the 14-family fragrance
+      wheel; a Python pipeline precomputes 1.5M pair scores so a ranking is one indexed query. Fixed
+      a similarity matrix with a negative eigenvalue so a bottle always matches itself best, with a
+      test that fails the build if that ever breaks.</li>
+      <li><strong>CI/CD to AWS.</strong> GitHub Actions runs lint, typechecks, and 416 tests
+      (Vitest, Supertest, pytest, Playwright), builds three Docker images, pushes to GHCR, and
+      deploys to EC2 over SSH: migrations first, then a health check that fails the job if it
+      isn't 200 within 60 seconds.</li>
+      <li><strong>Safe, cheap AI.</strong> The model never names a fragrance; it only turns words
+      into weights and the server picks every bottle. Atomic per-visitor caps keep a full chat
+      around $0.002.</li>
+    </ul>
+  </article>
 
-<article class="project" id="perfect-run">
-  <header>
-    <span class="num">06</span>
-    <h2>15-0-0</h2>
-    <p class="oneliner">A spin-draft fantasy game inspired by 38-0-0: draft one player per
-    round from real historical squads and see whether your XI can run a whole Champions
-    League or World Cup campaign undefeated.</p>
-  </header>
-  <figure>
-    <img src="assets/perfect-run.png" alt="15-0-0 game setup screen: choose Champions League or World Cup, Classic or Expert mode, and one of seven formations" loading="lazy">
-    <figcaption>Setting up a run: competition, mode, and formation.</figcaption>
-  </figure>
-  <div class="meta">
-    <div class="meta-row"><span class="meta-label">Stack</span><span>Vanilla HTML · CSS · JavaScript, zero dependencies</span></div>
-    <div class="meta-row"><span class="meta-label">Role</span><span>Solo. Design, simulation, and data curation</span></div>
-    <div class="meta-row"><span class="meta-label">Scope</span><span>Two competitions with their own themes and tier ladders
-      (the Swiss-format UCL, perfect run 15-0-0, and the classic World Cup, perfect run 7-0-0); 41 iconic club-seasons
-      and 30 national squads with hand-curated ratings; every knockout tie simulated leg by leg, with draws going to
-      extra time and penalties. The whole game ships as one self-contained HTML file, no build step.</span></div>
-    <div class="meta-row"><span class="meta-label">Links</span><span><a href="https://github.com/redactedtxt/perfect-run" target="_blank" rel="noopener">github.com/redactedtxt/perfect-run</a></span></div>
+  <div class="grid">
+
+    <!-- 02 · Stackd -->
+    <article class="card reveal" id="stackd">
+      <div class="card-top">
+        <span class="num">02 <i>/ 07</i></span>
+        <span class="badge">solo</span>
+      </div>
+      <h3>Stackd</h3>
+      <p class="desc">A paper-trading app where students learn to invest with $10,000 of practice
+      money. A seeded market engine generates five years of price history per asset, so every chart
+      is identical on every visit, and the performance chart is rebuilt by replaying the transaction
+      log.</p>
+      <ul class="tags">
+        <li>React</li><li>TypeScript</li><li>Zustand</li><li>Tailwind</li><li>Vite</li>
+      </ul>
+      <div class="thumb"><img src="assets/stackd.png" width="1440" height="900" loading="lazy" alt="Stackd onboarding screen: dark interface with the Stackd wordmark and feature list"></div>
+      <p class="links">
+        <a href="https://github.com/redactedtxt/stackd" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </article>
+
+    <!-- 03 · Mitra -->
+    <article class="card reveal" id="mitra">
+      <div class="card-top">
+        <span class="num">03 <i>/ 07</i></span>
+        <span class="badge">team</span>
+      </div>
+      <h3>Mitra</h3>
+      <p class="desc">A map-based web app that breaks the ice between university students by showing
+      nearby people with shared interests, plotted live from browser geolocation.</p>
+      <p class="role"><span>my part</span> The Express and SQL Server backend for profiles and
+      coordinates, with parameterized queries on every request to block SQL injection.</p>
+      <ul class="tags">
+        <li>React</li><li>Leaflet</li><li>Node</li><li>Express</li><li>SQL Server</li><li>Docker</li>
+      </ul>
+      <div class="thumb"><img src="assets/mitra.png" width="607" height="703" loading="lazy" alt="Mitra running in a browser: a Leaflet map of Waterloo with user location markers"></div>
+      <p class="links">
+        <a href="https://github.com/AnimeniacSimey/MitraApp" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </article>
+
+    <!-- 04 · OMEN -->
+    <article class="card reveal" id="omen">
+      <div class="card-top">
+        <span class="num">04 <i>/ 07</i></span>
+        <span class="badge">solo</span>
+      </div>
+      <h3>OMEN</h3>
+      <p class="desc">Paste a YouTube link to a Punjabi song and get the lyrics back line by line:
+      Romanized Punjabi over an English translation. Messy titles are cleaned, matched against Genius
+      with fuzzy scoring, and translated with a strict prompt so the output is stable run to run.</p>
+      <ul class="tags">
+        <li>Python</li><li>OpenAI API</li><li>Genius API</li><li>yt-dlp</li><li>RapidFuzz</li><li>Tkinter</li>
+      </ul>
+      <div class="thumb"><img src="assets/omen-ui.png" width="980" height="760" loading="lazy" alt="OMEN desktop app with a YouTube link field and a translation results panel"></div>
+      <p class="links">
+        <a href="https://github.com/redactedtxt/omen" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </article>
+
+    <!-- 05 · HawkMaps -->
+    <article class="card reveal" id="hawkmaps">
+      <div class="card-top">
+        <span class="num">05 <i>/ 07</i></span>
+        <span class="badge">team</span>
+      </div>
+      <h3>HawkMaps</h3>
+      <p class="desc">A Laurier campus app with an interactive map, live study-space availability,
+      club events, and an AI assistant, all behind a Laurier-email login.</p>
+      <p class="role"><span>my part</span> GoldenHawk, the AI assistant: an LLM backend with an
+      on-device fallback that grounds answers in campus data and finds the fastest indoor route with
+      Dijkstra's algorithm, so chat keeps working offline.</p>
+      <ul class="tags">
+        <li>React Native</li><li>Expo</li><li>TypeScript</li><li>FastAPI</li><li>SQLite</li>
+      </ul>
+      <div class="thumb"><img src="assets/hawkmaps.png" width="884" height="932" loading="lazy" alt="Two HawkMaps screens: the welcome screen and the Study Spaces tab with live seat availability"></div>
+      <p class="links">
+        <a href="https://github.com/AnimeniacSimey/HawkMaps" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </article>
+
+    <!-- 06 · HarvestAI -->
+    <article class="card reveal" id="harvestai">
+      <div class="card-top">
+        <span class="num">06 <i>/ 07</i></span>
+        <span class="badge">team</span>
+      </div>
+      <h3>HarvestAI</h3>
+      <p class="desc">Recommends a nitrate fertilizer mix for a specific field by combining
+      soil-sensor readings, government soil data, and regional climate.</p>
+      <p class="role"><span>my part</span> The GeoPandas and Shapely parser that matches a location
+      to its Canada Land Inventory soil polygon, and the DeepSeek integration that turns that soil
+      context into the recommendation.</p>
+      <ul class="tags">
+        <li>Python</li><li>GeoPandas</li><li>Shapely</li><li>DeepSeek</li><li>Matplotlib</li>
+      </ul>
+      <div class="thumb"><img src="assets/harvestai.png" width="487" height="928" loading="lazy" alt="HarvestAI interface: soil moisture and pH charts with a fertilizer recommendation"></div>
+      <p class="links">
+        <a href="https://github.com/AnimeniacSimey/HarvestAI" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </article>
+
+    <!-- 07 · 15-0-0 -->
+    <article class="card reveal" id="perfect-run">
+      <div class="card-top">
+        <span class="num">07 <i>/ 07</i></span>
+        <span class="badge">solo</span>
+      </div>
+      <h3>15-0-0</h3>
+      <p class="desc">A spin-draft football game: draft an XI from real historical squads and see
+      whether it can run a Champions League or World Cup campaign undefeated. 41 club-seasons, 30
+      national squads, knockouts simulated leg by leg. One self-contained HTML file.</p>
+      <ul class="tags">
+        <li>JavaScript</li><li>HTML</li><li>CSS</li><li>Zero dependencies</li>
+      </ul>
+      <div class="thumb"><img src="assets/perfect-run.png" width="1360" height="860" loading="lazy" alt="15-0-0 setup screen: choose a competition, a mode, and a formation"></div>
+      <p class="links">
+        <a href="https://github.com/redactedtxt/perfect-run" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </article>
+
   </div>
-</article>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<section class="toolkit wrap" id="toolkit">
+  <p class="eyebrow">toolkit</p>
+  <h2 class="section-title">What I work with.</h2>
+
+  <ul class="logos" aria-label="Main tools">
+    <li><img src="assets/icons/typescript-original.svg" alt="" width="32" height="32"><span>TypeScript</span></li>
+    <li><img src="assets/icons/react-original.svg" alt="" width="32" height="32"><span>React</span></li>
+    <li><img src="assets/icons/nodejs-original.svg" alt="" width="32" height="32"><span>Node.js</span></li>
+    <li><img src="assets/icons/python-original.svg" alt="" width="32" height="32"><span>Python</span></li>
+    <li><img src="assets/icons/postgresql-original.svg" alt="" width="32" height="32"><span>PostgreSQL</span></li>
+    <li><img src="assets/icons/docker-original.svg" alt="" width="32" height="32"><span>Docker</span></li>
+    <li><img class="only-light" src="assets/icons/amazonwebservices-original-wordmark.svg" alt="" width="32" height="32"><img class="only-dark" src="assets/icons/amazonwebservices-dark.svg" alt="" width="32" height="32"><span>AWS</span></li>
+    <li><img src="assets/icons/githubactions-original.svg" alt="" width="32" height="32"><span>GitHub Actions</span></li>
+    <li><img src="assets/icons/fastapi-original.svg" alt="" width="32" height="32"><span>FastAPI</span></li>
+    <li><img src="assets/icons/tailwindcss-original.svg" alt="" width="32" height="32"><span>Tailwind</span></li>
+    <li><img src="assets/icons/playwright-original.svg" alt="" width="32" height="32"><span>Playwright</span></li>
+    <li><img src="assets/icons/vitejs-original.svg" alt="" width="32" height="32"><span>Vite</span></li>
+  </ul>
+
+  <dl class="skills">
+    <div><dt>languages</dt><dd>TypeScript, Python, JavaScript, SQL, Java, C</dd></div>
+    <div><dt>full-stack</dt><dd>React, React Native, Node.js / Express, FastAPI, PostgreSQL, SQL Server, REST APIs, Zod, Tailwind CSS</dd></div>
+    <div><dt>cloud &amp; devops</dt><dd>AWS (EC2, S3, IAM), Docker, Docker Compose, GitHub Actions, Caddy, Linux, Git &amp; GitHub</dd></div>
+    <div><dt>ai</dt><dd>LLM APIs (Claude, OpenAI, DeepSeek, Groq), structured output, prompt engineering</dd></div>
+    <div><dt>testing</dt><dd>Vitest, Supertest, Testing Library, pytest, Playwright, Lighthouse</dd></div>
+    <div><dt>spoken</dt><dd>English, French (professional working proficiency), Punjabi, Hindi</dd></div>
+  </dl>
+</section>
 
 </main>
 
-<footer>
-  <p>Tejas Soddy · <a href="mailto:soddytejas@gmail.com">soddytejas@gmail.com</a> ·
-  <a href="https://github.com/redactedtxt" target="_blank" rel="noopener">GitHub</a> ·
-  <a href="https://www.linkedin.com/in/tejas-soddy/" target="_blank" rel="noopener">LinkedIn</a> ·
-  <a href="assets/Tejas_Soddy_Resume.pdf" download>Resume</a></p>
+<footer class="wrap footer">
+  <p>© 2026 Tejas Soddy <span class="built">· plain HTML, CSS &amp; JS on GitHub Pages</span></p>
+  <nav aria-label="Contact">
+    <a href="https://github.com/redactedtxt" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/tejas-soddy/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:soddytejas@gmail.com">Email</a>
+    <a href="assets/Tejas_Soddy_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+  </nav>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,38 +1,40 @@
 # Portfolio: Tejas Soddy
 
-Personal portfolio site: six projects, resume, and contact links, aimed at
-recruiters. Plain HTML + CSS, no framework, no build step.
+Personal portfolio site: seven projects (Scense featured), resume, and contact
+links, aimed at recruiters. Plain HTML, CSS, and a little JavaScript. No
+framework, no build step. Live at https://redactedtxt.github.io.
 
 ## Run locally
 
 ```
-npx serve .
+python -m http.server 8765
 ```
 
-Then open the printed URL (defaults to http://localhost:3000). Any static file
-server works; the site is just `index.html`, `styles.css`, and `assets/`.
+Then open http://localhost:8765. Any static file server works.
 
 ## Deploy
 
-The site is fully static, so any static host works:
-
-- **GitHub Pages**: push this folder to a repo, enable Pages on the main
-  branch, done.
-- **Netlify / Vercel / Render**: point them at the repo; no build command,
-  publish directory is the repo root.
+This repo is `redactedtxt/redactedtxt.github.io`, so GitHub Pages serves the
+`main` branch automatically. Push to `main` and the site updates within a
+minute or two.
 
 ## Structure
 
 ```
 portfolio/
-├── index.html    # the whole site: masthead, project index, five project cards
-├── styles.css    # editorial styling: paper/ink palette, one green accent
-└── assets/       # real project screenshots + resume PDF
+├── index.html    # the whole site: nav, hero + deploy terminal, projects, toolkit, footer
+├── styles.css    # dark by default, light via [data-theme="light"]; purple accent, green for live/passing
+├── script.js     # theme toggle, deploy-terminal replay, scroll progress, card reveal
+└── assets/
+    ├── icons/    # tech-stack SVGs (Devicon, MIT)
+    ├── *.png/jpg # project screenshots
+    └── Tejas_Soddy_Resume.pdf
 ```
 
 ## Updating
 
-- New screenshot: drop it in `assets/` and update the matching `<img>` in
-  `index.html`.
+- New project: copy one `<article class="card">` block inside `.grid` in
+  `index.html`, then renumber.
+- New screenshot: drop it in `assets/` and update the matching `<img>`.
 - New resume: replace `assets/Tejas_Soddy_Resume.pdf` (keep the filename and
-  the links keep working).
+  every link keeps working).
