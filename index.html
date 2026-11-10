@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap">
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
 
@@ -28,10 +28,11 @@
   <div class="wrap nav-inner">
     <a class="wordmark" href="#top" aria-label="Tejas Soddy, back to top">tejas<span>.</span>soddy</a>
     <nav aria-label="Primary">
+      <a class="nav-link hide-sm" href="#experience">Experience</a>
       <a class="nav-link hide-sm" href="#projects">Projects</a>
       <a class="nav-link" href="https://github.com/redactedtxt" target="_blank" rel="noopener">GitHub</a>
       <a class="nav-link hide-xs" href="https://www.linkedin.com/in/tejas-soddy/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn btn-sm" href="assets/Tejas_Soddy_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a class="btn btn-sm" href="assets/Tejas_Soddy_Resume.pdf?v=2" target="_blank" rel="noopener">Resume</a>
       <button class="theme-toggle" type="button" aria-label="Switch to light theme">
         <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -51,7 +52,7 @@
     Postgres behind, and GitHub Actions pushing it all to AWS. Open to internships.</p>
     <div class="hero-actions">
       <a class="btn btn-primary btn-lg" href="mailto:soddytejas@gmail.com">Email me</a>
-      <a class="btn btn-lg" href="assets/Tejas_Soddy_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+      <a class="btn btn-lg" href="assets/Tejas_Soddy_Resume.pdf?v=2" target="_blank" rel="noopener">Resume (PDF)</a>
     </div>
   </div>
 
@@ -75,6 +76,47 @@
     the full engine also weighs facets and strength.</figcaption>
     <noscript><p class="wheel-noscript">The interactive wheel needs JavaScript. See it working at <a href="https://scense.name">scense.name</a>.</p></noscript>
   </figure>
+</section>
+
+<section class="experience wrap" id="experience" aria-labelledby="experience-title">
+  <h2 class="section-title" id="experience-title">Experience</h2>
+
+  <ol class="roles">
+    <li class="role-item">
+      <p class="role-when"><time datetime="2026-09">Sept. 2026</time> – Present</p>
+      <div class="role-main">
+        <h3>Data Analyst Intern <span class="role-org"><span class="sep" aria-hidden="true">· </span>EcoServants</span></h3>
+        <p class="role-where">Remote</p>
+        <ul class="role-points">
+          <li>Shipped a queue watchdog and stuck-message recovery for GreenSend, the organization's
+          email plugin: stale-claim detection, safe recovery, and a dry-run mode that reports fixes
+          without writing to MariaDB.</li>
+          <li>Built a My Work dashboard for the Outcome Kanban WordPress plugin that sorts each intern's
+          work into Revisions, In Progress, Awaiting Review, and Recently Approved, with a one-click
+          next-step button.</li>
+          <li>Covered it with a 41-check automated test suite, and confirmed zero regressions by diffing
+          the plugin's existing shortcode output byte for byte before and after the patch.</li>
+        </ul>
+        <p class="meta">PHP · WordPress · MariaDB</p>
+      </div>
+    </li>
+    <li class="role-item">
+      <p class="role-when"><time datetime="2026-02">Feb. 2026</time> – Present</p>
+      <div class="role-main">
+        <h3>Lead Developer <span class="role-org"><span class="sep" aria-hidden="true">· </span>Waterloo Rocketry Club</span></h3>
+        <p class="role-where">Business Team · Waterloo, ON</p>
+        <ul class="role-points">
+          <li>Built a Google Apps Script system behind a Google Form that automates purchase
+          reimbursements: each submission picks a reimbursement or direct-charge path, then fills and
+          emails the paperwork on its own.</li>
+          <li>For a reimbursement it generates a claim number, fills the University of Waterloo
+          expense-claim template, exports it to PDF, merges the uploaded receipts into one file, and
+          emails the finished package to the student and finance.</li>
+        </ul>
+        <p class="meta">Google Apps Script · Google Forms</p>
+      </div>
+    </li>
+  </ol>
 </section>
 
 <section class="projects wrap" id="projects" aria-labelledby="projects-title">
@@ -209,12 +251,12 @@
 <section class="toolkit wrap" id="toolkit" aria-labelledby="toolkit-title">
   <h2 class="section-title" id="toolkit-title">TypeScript and Python, shipped with Docker and AWS</h2>
   <dl class="skills">
-    <div><dt>Languages</dt><dd>TypeScript, Python, JavaScript, SQL, Java, C</dd></div>
-    <div><dt>Full-stack</dt><dd>React, React Native, Node.js / Express, FastAPI, PostgreSQL, SQL Server, REST APIs, Zod, Tailwind CSS</dd></div>
+    <div><dt>Languages</dt><dd>TypeScript, Python, JavaScript, SQL, Java, C, PHP</dd></div>
+    <div><dt>Full-stack</dt><dd>React, React Native, Node.js / Express, FastAPI, PostgreSQL, MariaDB, SQL Server, REST APIs, Zod</dd></div>
     <div><dt>Cloud &amp; DevOps</dt><dd>AWS (EC2, S3, IAM), Docker, Docker Compose, GitHub Actions, Caddy, Linux, Git &amp; GitHub</dd></div>
     <div><dt>AI</dt><dd>LLM APIs (Claude, OpenAI, DeepSeek, Groq), structured output, prompt engineering</dd></div>
     <div><dt>Testing</dt><dd>Vitest, Supertest, Testing Library, pytest, Playwright, Lighthouse</dd></div>
-    <div><dt>Spoken</dt><dd>English, French (professional working proficiency), Punjabi, Hindi</dd></div>
+    <div><dt>Spoken</dt><dd>English, French, Punjabi, Hindi</dd></div>
   </dl>
 </section>
 
@@ -232,7 +274,7 @@
           <span class="tip" aria-hidden="true">Copy</span>
         </button>
       </div>
-      <a class="btn btn-lg" href="assets/Tejas_Soddy_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+      <a class="btn btn-lg" href="assets/Tejas_Soddy_Resume.pdf?v=2" target="_blank" rel="noopener">Resume (PDF)</a>
     </div>
     <p class="sr-only" role="status" aria-live="polite" id="copy-status"></p>
   </div>

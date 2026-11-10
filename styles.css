@@ -258,7 +258,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
 /* ================= Sections ================= */
 
-.projects, .toolkit { padding-top: var(--s-9); }
+.experience, .projects, .toolkit { padding-top: var(--s-9); }
 .contact { padding-top: var(--s-9); padding-bottom: var(--s-9); }
 
 .section-title {
@@ -362,6 +362,20 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .points strong { display: block; margin-bottom: var(--s-1); color: var(--fg); font-size: var(--t-base); font-weight: 600; }
 
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-5); }
+
+/* ================= Experience ================= */
+/* A dated list, not cards: dates in a narrow left column, the role on the right */
+
+.roles { list-style: none; display: grid; gap: var(--s-7); }
+.role-item { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: var(--s-6); }
+.role-when { font-size: var(--t-sm); color: var(--subtle); font-variant-numeric: tabular-nums; padding-top: 0.35rem; }
+.role-main h3 { font-size: var(--t-xl); }
+.role-org { color: var(--muted); font-weight: 400; }
+.role-where { margin-top: var(--s-1); font-size: var(--t-sm); color: var(--subtle); }
+.role-points { list-style: disc; margin-top: var(--s-4); padding-left: 1.1rem; display: grid; gap: var(--s-2); max-width: 46rem; }
+.role-points li { color: var(--muted); line-height: var(--lh-body); }
+.role-points li::marker { color: var(--subtle); }
+.meta { margin-top: var(--s-4); font: 400 var(--t-xs)/1.6 var(--mono); color: var(--subtle); }
 
 /* ================= Toolkit ================= */
 
@@ -472,7 +486,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .email-main { flex: 1; }
   .wheel-demo { justify-self: stretch; max-width: none; }
   .wheel .label { font-size: 15.5px; }
-  .projects, .toolkit { padding-top: var(--s-8); }
+  .experience, .projects, .toolkit { padding-top: var(--s-8); }
+  .role-item { grid-template-columns: 1fr; gap: var(--s-2); }
+  .role-org { display: block; margin-top: var(--s-1); font-size: var(--t-lg); }
+  .role-org .sep { display: none; }
   .contact { padding-top: var(--s-8); padding-bottom: var(--s-8); }
   .section-title { margin-bottom: var(--s-6); }
   .grid { grid-template-columns: 1fr; }
