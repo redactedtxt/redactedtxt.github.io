@@ -445,6 +445,38 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .email-copy.copied .i-check { display: block; animation: pop 0.3s var(--ease); }
 @keyframes pop { from { transform: scale(0.4); opacity: 0; } to { transform: none; opacity: 1; } }
 
+/* ================= Resume page ================= */
+
+.resume { padding-top: var(--s-8); padding-bottom: var(--s-8); }
+.resume-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--s-5); flex-wrap: wrap; }
+.resume h1 { font-size: var(--t-3xl); margin-left: -0.03em; }
+.resume-sub { margin-top: var(--s-2); color: var(--muted); font-size: var(--t-sm); }
+.resume-actions { display: flex; flex-wrap: wrap; gap: var(--s-3); }
+
+/* The pages: white paper in both themes, like a printed sheet */
+.resume-pages { position: relative; max-width: 54rem; margin: var(--s-6) auto 0; display: grid; gap: var(--s-5); }
+.resume-page {
+  position: relative;
+  background: #ffffff;
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--line), 0 18px 40px -18px rgba(0, 0, 0, 0.45);
+}
+.resume-page img { display: block; width: 100%; height: auto; }
+/* Link areas copied from the PDF, positioned in % so they track the image at any size */
+.resume-link { position: absolute; border-radius: 2px; }
+.resume-link:hover { background: rgba(0, 0, 0, 0.07); }
+.resume-link:focus-visible { outline: 2px solid #0a0a0a; outline-offset: 2px; }
+.resume-foot a { color: var(--accent); text-underline-offset: 3px; }
+.resume-foot { max-width: 54rem; margin: var(--s-5) auto 0; text-align: center; color: var(--subtle); font-size: var(--t-sm); }
+
+@media (max-width: 640px) {
+  .resume { padding-top: var(--s-6); padding-bottom: var(--s-6); }
+  .resume-actions { width: 100%; }
+  .resume-actions .btn { flex: 1 1 auto; }
+  .resume-pages { margin-top: var(--s-5); }
+}
+
 /* ================= Footer ================= */
 
 .footer { font-size: var(--t-sm); color: var(--subtle); font-variant-numeric: tabular-nums; }

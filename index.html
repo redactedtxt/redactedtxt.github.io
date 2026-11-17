@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap">
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
 
@@ -32,7 +32,7 @@
       <a class="nav-link hide-sm" href="#projects">Projects</a>
       <a class="nav-link" href="https://github.com/redactedtxt" target="_blank" rel="noopener">GitHub</a>
       <a class="nav-link hide-xs" href="https://www.linkedin.com/in/tejas-soddy/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn btn-sm" href="assets/Tejas_Soddy_Resume.pdf?v=2" target="_blank" rel="noopener">Resume</a>
+      <a class="btn btn-sm" href="resume/">Resume</a>
       <button class="theme-toggle" type="button" aria-label="Switch to light theme">
         <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -52,7 +52,7 @@
     Postgres behind, and GitHub Actions pushing it all to AWS. Open to internships.</p>
     <div class="hero-actions">
       <a class="btn btn-primary btn-lg" href="mailto:soddytejas@gmail.com">Email me</a>
-      <a class="btn btn-lg" href="assets/Tejas_Soddy_Resume.pdf?v=2" target="_blank" rel="noopener">Resume (PDF)</a>
+      <a class="btn btn-lg" href="resume/">Resume</a>
     </div>
   </div>
 
@@ -86,18 +86,26 @@
       <p class="role-when"><time datetime="2026-09">Sept. 2026</time> – Present</p>
       <div class="role-main">
         <h3>Data Analyst Intern <span class="role-org"><span class="sep" aria-hidden="true">· </span>EcoServants</span></h3>
-        <p class="role-where">Remote</p>
+        <p class="role-where">Grant Research and Plugin Testing · Remote</p>
         <ul class="role-points">
-          <li>Shipped a queue watchdog and stuck-message recovery for GreenSend, the organization's
-          email plugin: stale-claim detection, safe recovery, and a dry-run mode that reports fixes
-          without writing to MariaDB.</li>
-          <li>Built a My Work dashboard for the Outcome Kanban WordPress plugin that sorts each intern's
-          work into Revisions, In Progress, Awaiting Review, and Recently Approved, with a one-click
-          next-step button.</li>
-          <li>Covered it with a 41-check automated test suite, and confirmed zero regressions by diffing
-          the plugin's existing shortcode output byte for byte before and after the patch.</li>
+          <li>Screened 12 grantmakers by parsing IRS Form 990 and 990-PF filings, scored each on fit, and built a 21-funder dataset sorted into five tiers with a documented reason for each, ready to import into the Grant Tracker.</li>
+          <li>Flagged two anomalous grants-paid figures and a funder that had merged into another foundation, and normalized EINs and fiscal years across 21 records so bad data never reached the rankings the grants team used.</li>
+          <li>Wrote automated test suites of 89 and 41 checks for WordPress plugin features in PHP, confirmed zero regressions by diffing rendered output, and caught a mobile layout bug and a MariaDB zero-date defect before review.</li>
         </ul>
-        <p class="meta">PHP · WordPress · MariaDB</p>
+        <p class="meta">IRS 990 data · PHP · WordPress · MariaDB</p>
+      </div>
+    </li>
+    <li class="role-item">
+      <p class="role-when"><time datetime="2026-05">May 2026</time> – <time datetime="2026-08">Aug. 2026</time></p>
+      <div class="role-main">
+        <h3>Software Engineer <span class="role-org"><span class="sep" aria-hidden="true">· </span>Vali AI</span></h3>
+        <p class="role-where">Applied AI: RAG, Evals, and Post-Training · Remote</p>
+        <ul class="role-points">
+          <li>Built the retrieval-augmented generation (RAG) pipeline for a workplace communication tool, using chunking, embeddings, vector search, and reranking so each answer cites its sources, then tuned retrieval on a labeled set.</li>
+          <li>Supported post-training by cleaning instruction and preference datasets and running fine-tuning experiments, scored by an evaluation harness with a curated test set and LLM graders that caught regressions before release.</li>
+          <li>Built agentic workflows with tool calling and Microsoft 365 and Google Workspace integrations, used by 50+ users and tied to a 40% gain in workplace effectiveness and efficiency, with Python data pipelines feeding retrieval.</li>
+        </ul>
+        <p class="meta">Python · RAG · vector search · LLM evals · fine-tuning · tool calling</p>
       </div>
     </li>
     <li class="role-item">
@@ -106,14 +114,23 @@
         <h3>Lead Developer <span class="role-org"><span class="sep" aria-hidden="true">· </span>Waterloo Rocketry Club</span></h3>
         <p class="role-where">Business Team · Waterloo, ON</p>
         <ul class="role-points">
-          <li>Built a Google Apps Script system behind a Google Form that automates purchase
-          reimbursements: each submission picks a reimbursement or direct-charge path, then fills and
-          emails the paperwork on its own.</li>
-          <li>For a reimbursement it generates a claim number, fills the University of Waterloo
-          expense-claim template, exports it to PDF, merges the uploaded receipts into one file, and
-          emails the finished package to the student and finance.</li>
+          <li>Built a Google Apps Script system behind a Google Form that automates purchase reimbursements: each submission picks a reimbursement or direct-charge path, then fills and emails the paperwork on its own.</li>
+          <li>For a reimbursement it generates a claim number, fills the University of Waterloo expense-claim template, exports it to PDF, merges the uploaded receipts into one file, and emails the finished package to the student and finance.</li>
         </ul>
         <p class="meta">Google Apps Script · Google Forms</p>
+      </div>
+    </li>
+    <li class="role-item">
+      <p class="role-when"><time datetime="2024">2024</time> – <time datetime="2026-04">Apr. 2026</time></p>
+      <div class="role-main">
+        <h3>Business Operations and Data Intern <span class="role-org"><span class="sep" aria-hidden="true">· </span>Soddy Heating and Air</span></h3>
+        <p class="role-where">Quoting Automation and Data Operations · Brampton, ON</p>
+        <ul class="role-points">
+          <li>Automated quote creation with VBA macros in Excel, filling in customer details, parts, and totals from the job records so each quote needed far less manual typing and had fewer copy errors on repeat jobs.</li>
+          <li>Tracked quotes, invoices, and open jobs in one spreadsheet for the owner and technicians, flagging unpaid invoices and upcoming seasonal maintenance so no payment or service visit slipped through the cracks.</li>
+          <li>Cleaned and standardized customer and job data, such as addresses, equipment models, and install dates, so repeat customers and past service history were easy to look up, and pulled seasonal job counts for planning.</li>
+        </ul>
+        <p class="meta">Excel · VBA</p>
       </div>
     </li>
   </ol>
@@ -162,16 +179,23 @@
   <div class="grid">
 
     <article class="card" id="stackd">
-      <div class="media"><img src="assets/stackd.png" width="1440" height="900" loading="lazy" alt="Stackd onboarding screen: dark interface with the Stackd wordmark and feature list"></div>
+      <a class="media" href="https://stackd-phi.vercel.app/" target="_blank" rel="noopener" tabindex="-1"><img src="assets/stackd-lab.jpg" width="892" height="566" loading="lazy" alt="Stackd Strategy Lab: an EMA crossover backtest on VOO with eight metrics, including CAGR, Sharpe ratio and max drawdown, above a growth-of-$10,000 chart against buy and hold"></a>
       <div class="card-body">
-        <div class="badges"><span class="badge">Solo</span></div>
+        <div class="badges"><span class="badge badge-live"><span class="dot"></span>Live</span><span class="badge">Solo</span></div>
         <h3>Stackd</h3>
-        <p class="desc">A paper-trading app where students learn to invest with $10,000 of practice
-        money. A seeded market engine generates five years of price history per asset, so every chart
-        is identical on every visit, and the performance chart is rebuilt by replaying the transaction
-        log.</p>
-        <ul class="tags"><li>React</li><li>TypeScript</li><li>Zustand</li><li>Tailwind</li><li>Vite</li></ul>
-        <p class="links"><a href="https://github.com/redactedtxt/stackd" target="_blank" rel="noopener">GitHub<span aria-hidden="true">↗</span></a></p>
+        <p class="desc">A paper-trading app built on a deterministic market simulator: seeded Geometric
+        Brownian Motion gives every device the same five-year price history for 30 assets, with no
+        backend. Its in-browser Strategy Lab backtests EMA crossover, trend following, and dollar-cost
+        averaging against buy and hold on CAGR, Sharpe, drawdown, and win rate, with next-day fills to
+        avoid look-ahead bias.</p>
+        <p class="role"><strong>Under the hood:</strong> backtests run in a Web Worker with debounced
+        requests so the UI stays responsive, and 47 Vitest tests cover the simulator, indicators, and
+        backtester, with GitHub Actions CI and automatic Vercel deploys.</p>
+        <ul class="tags"><li>React</li><li>TypeScript</li><li>Zustand</li><li>Web Workers</li><li>Vitest</li><li>GitHub Actions</li><li>Vercel</li></ul>
+        <p class="links">
+          <a href="https://stackd-phi.vercel.app/" target="_blank" rel="noopener">Live site<span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/redactedtxt/stackd" target="_blank" rel="noopener">GitHub<span aria-hidden="true">↗</span></a>
+        </p>
       </div>
     </article>
 
@@ -251,11 +275,10 @@
 <section class="toolkit wrap" id="toolkit" aria-labelledby="toolkit-title">
   <h2 class="section-title" id="toolkit-title">TypeScript and Python, shipped with Docker and AWS</h2>
   <dl class="skills">
-    <div><dt>Languages</dt><dd>TypeScript, Python, JavaScript, SQL, Java, C, PHP</dd></div>
-    <div><dt>Full-stack</dt><dd>React, React Native, Node.js / Express, FastAPI, PostgreSQL, MariaDB, SQL Server, REST APIs, Zod</dd></div>
-    <div><dt>Cloud &amp; DevOps</dt><dd>AWS (EC2, S3, IAM), Docker, Docker Compose, GitHub Actions, Caddy, Linux, Git &amp; GitHub</dd></div>
-    <div><dt>AI</dt><dd>LLM APIs (Claude, OpenAI, DeepSeek, Groq), structured output, prompt engineering</dd></div>
-    <div><dt>Testing</dt><dd>Vitest, Supertest, Testing Library, pytest, Playwright, Lighthouse</dd></div>
+    <div><dt>Languages</dt><dd>Python, TypeScript, JavaScript, SQL, Java, C, VBA</dd></div>
+    <div><dt>AI</dt><dd>RAG, embeddings and vector search, LLM evaluation, fine-tuning, prompt engineering, agentic workflows</dd></div>
+    <div><dt>Full-stack</dt><dd>React, Node.js / Express, FastAPI, PostgreSQL, SQL Server, REST APIs</dd></div>
+    <div><dt>Cloud &amp; DevOps</dt><dd>AWS (EC2, S3, IAM), Docker, GitHub Actions, Linux, Git &amp; GitHub</dd></div>
     <div><dt>Spoken</dt><dd>English, French, Punjabi, Hindi</dd></div>
   </dl>
 </section>
@@ -274,7 +297,7 @@
           <span class="tip" aria-hidden="true">Copy</span>
         </button>
       </div>
-      <a class="btn btn-lg" href="assets/Tejas_Soddy_Resume.pdf?v=2" target="_blank" rel="noopener">Resume (PDF)</a>
+      <a class="btn btn-lg" href="resume/">Resume</a>
     </div>
     <p class="sr-only" role="status" aria-live="polite" id="copy-status"></p>
   </div>
